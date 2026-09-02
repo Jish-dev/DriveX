@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveX | Booking</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .text-yellow {
+            color: var(--brand-yellow) !important;
+        }
+
+        .text-brand-dark {
+            color: var(--brand-dark) !important;
+        }
+
+        .bg-yellow {
+            background-color: var(--brand-yellow) !important;
+        }
+
+        /* --- Components --- */
+        /* Buttons */
+        .btn-brand {
+            background-color: var(--brand-yellow);
+            color: #000;
+            font-weight: 600;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-brand:hover {
+            background-color: #e5a60c;
+            color: #000;
+        }
+
+        .btn-outline-brand {
+            border: 1px solid var(--border-color);
+            background: white;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .btn-outline-brand:hover {
+            border-color: var(--brand-yellow);
+        }
+
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 100%),
+                url(img/car-bg.png) center/cover no-repeat;
+            color: white;
+            padding: 80px 0 140px;
+            /* Extra bottom padding for overlap */
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .hero-features i {
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            padding: 8px;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* Main Content Cards */
+        .content-overlap {
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .custom-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: none;
+            height: 100%;
+            padding: 30px;
+        }
+
+        .card-title-lg {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        /* Timeline / Duration */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            border-left: 2px dashed #cbd5e1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -21px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--brand-yellow);
+            background: white;
+        }
+
+        .duration-badge {
+            background-color: #fffbeb;
+            color: #b45309;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Form Elements */
+        .form-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .input-group-text {
+            background-color: transparent;
+            border-right: none;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            box-shadow: none;
+            border-color: var(--brand-yellow);
+        }
+
+        .input-group:focus-within .input-group-text,
+        .input-group:focus-within .form-control {
+            border-color: var(--brand-yellow);
+        }
+
+        .form-control-left-border {
+            border-left: 1px solid var(--border-color);
+            padding-left: 12px;
+        }
+
+        /* File Upload */
+        .upload-area {
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            background-color: #f8fafc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .upload-area:hover {
+            border-color: var(--brand-yellow);
+            background-color: #fffbeb;
+        }
+
+        .upload-area i {
+            font-size: 2rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        /* Payment Options */
+        .payment-option {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .payment-option:hover {
+            border-color: #cbd5e1;
+        }
+
+        .payment-option.active {
+            border-color: var(--brand-yellow);
+            background-color: #fffbeb;
+        }
+
+        .payment-option .form-check-input {
+            margin-top: 0;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .payment-option .form-check-input:checked {
+            background-color: var(--brand-yellow);
+            border-color: var(--brand-yellow);
+        }
+
+        .payment-logos {
+            display: flex;
+            gap: 10px;
+            font-size: 1.2rem;
+            color: #475569;
+        }
+
+        /* Secure Badge */
+        .secure-badge {
+            background-color: #fffbeb;
+            border: 1px solid #fef08a;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .secure-badge i {
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        /* Features Bottom */
+        .feature-bottom-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #fffbeb;
+            color: var(--brand-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--brand-dark);
+            color: #94a3b8;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+
+        footer h5 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--brand-yellow);
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #94a3b8;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+
+        .social-icons a:hover {
+            border-color: var(--brand-yellow);
+            color: var(--brand-yellow);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <!-- <img src="img/logo-2.png" alt=""> -->
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cars.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active"
+                            style="border-bottom: 2px solid var(--brand-yellow);" href="book.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4">
+                    <i class="bi bi-moon-fill text-white fs-5" role="button"></i>
+                    <a class="text-dark" href="book.html"><button class="btn btn-brand">Book Now</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="text-white-50 mb-3 small">
+                        Home <i class="fa-solid fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> Booking
+                    </div>
+                    <div class="text-yellow fw-bold small text-uppercase mb-2 tracking-wide">BOOK YOUR RIDE</div>
+                    <h1 class="mb-3">Complete Your Booking</h1>
+                    <p class="fs-5 mb-4 opacity-75">Fast, secure and hassle-free car rental booking.</p>
+
+                    <div class="d-flex flex-wrap gap-4 mt-4 hero-features small fw-medium">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-bolt"></i> Best Prices
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-shield-halved"></i> Trusted & Safe
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-headset"></i> 24/7 Support
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container content-overlap pb-5">
+        <div class="row g-4">
+
+            <!-- LEFT COLUMN: Booking Summary -->
+            <div class="col-lg-5">
+                <div class="custom-card">
+                    <h3 class="card-title-lg">Booking Summary</h3>
+
+                    <!-- Selected Car -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-3">Selected Car</h6>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="" alt="Hyundai Creta" class="rounded object-fit-cover" width="120" height="80">
+                            <div>
+                                <h5 class="fw-bold mb-1">Hyundai Creta</h5>
+                                <p class="text-muted small mb-2">SUV</p>
+                                <div class="d-flex gap-3 small text-muted">
+                                    <span><i class="fa-regular fa-user me-1"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-code-branch me-1"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump me-1"></i> Petrol</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="border-secondary opacity-25 my-4">
+
+                    <!-- Rental Duration -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold mb-0">Rental Duration</h6>
+                            <button class="btn btn-sm btn-outline-brand px-3">Edit</button>
+                        </div>
+
+                        <div class="timeline mt-3">
+                            <div class="timeline-item d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="small text-muted fw-semibold"><i
+                                            class="fa-regular fa-calendar me-2"></i> Pickup</div>
+                                    <div class="fw-bold mt-1">20 May 2025, 10:00 AM</div>
+                                    <div class="small text-muted mt-1"><i class="fa-solid fa-location-dot me-2"></i>
+                                        Kochi, Kerala</div>
+                                </div>
+                                <span class="duration-badge">4 Days</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div>
+                                    <div class="small text-muted fw-semibold"><i
+                                            class="fa-regular fa-calendar me-2"></i> Return</div>
+                                    <div class="fw-bold mt-1">24 May 2025, 10:00 AM</div>
+                                    <div class="small text-muted mt-1"><i class="fa-solid fa-location-dot me-2"></i>
+                                        Kochi, Kerala</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="border-secondary opacity-25 my-4">
+
+                    <!-- Price Breakdown -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-3">Price Breakdown</h6>
+                        <div class="d-flex justify-content-between mb-2 small">
+                            <span class="text-muted">Base Fare (₹2,499 × 4 Days)</span>
+                            <span class="fw-medium">₹9,996</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 small">
+                            <span class="text-muted">Insurance <i class="fa-regular fa-circle-question ms-1"></i></span>
+                            <span class="fw-medium">₹1,199</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 small">
+                            <span class="text-muted">Taxes & Fees <i
+                                    class="fa-regular fa-circle-question ms-1"></i></span>
+                            <span class="fw-medium">₹899</span>
+                        </div>
+                    </div>
+
+                    <div class="border-top border-dashed my-3"></div>
+
+                    <!-- Total Cost -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h5 class="fw-bold mb-0">Total Cost</h5>
+                            <small class="text-muted">(Inclusive of all taxes)</small>
+                        </div>
+                        <h2 class="fw-bold mb-0">₹12,094</h2>
+                    </div>
+
+                    <!-- Secure Badge -->
+                    <div class="secure-badge">
+                        <i class="fa-solid fa-shield-check mt-1"></i>
+                        <div>
+                            <div class="fw-bold text-warning-emphasis mb-1" style="color: #ca8a04;">100% Secure Booking
+                            </div>
+                            <div class="small text-muted">Your data is safe with us. Secure payments and encrypted
+                                transactions.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Customer Details & Payment -->
+            <div class="col-lg-7">
+                <div class="custom-card">
+                    <h3 class="card-title-lg">Customer Details & Payment</h3>
+
+                    <!-- Customer Details Form -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-3">Customer Details</h6>
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <div class="input-group border rounded">
+                                <span class="input-group-text border-0"><i class="fa-regular fa-user"></i></span>
+                                <input type="text" class="form-control border-0 shadow-none"
+                                    placeholder="Enter your full name">
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number</label>
+                                <div class="input-group border rounded flex-nowrap">
+                                    <select class="form-select border-0 shadow-none bg-light" style="max-width: 90px;">
+                                        <option>+91</option>
+                                    </select>
+                                    <input type="tel" class="form-control border-0 form-control-left-border shadow-none"
+                                        placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address</label>
+                                <div class="input-group border rounded">
+                                    <span class="input-group-text border-0"><i
+                                            class="fa-regular fa-envelope"></i></span>
+                                    <input type="email" class="form-control border-0 shadow-none"
+                                        placeholder="Enter your email address">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- License Upload -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-1">Driving Licence Upload</h6>
+                        <p class="text-muted small mb-3">Upload a clear copy of your driving licence</p>
+                        <div class="upload-area">
+                            <i class="fa-solid fa-cloud-arrow-up text-dark"></i>
+                            <div class="fw-semibold">Click to upload <span class="fw-normal text-muted">or drag and
+                                    drop</span></div>
+                            <div class="small text-muted mt-1">JPG, PNG or PDF (Max. 5MB)</div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Options -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-1">Payment Options</h6>
+                        <p class="text-muted small mb-3">Choose a payment method</p>
+
+                        <label class="payment-option active w-100">
+                            <div class="d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="paymentMethod" checked>
+                                <span class="fw-semibold">UPI / QR Payment</span>
+                            </div>
+                            <div class="payment-logos fw-bold fst-italic" style="color: #0b5f38;">UPI</div>
+                        </label>
+
+                        <label class="payment-option w-100">
+                            <div class="d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="paymentMethod">
+                                <span class="fw-semibold text-muted">Credit / Debit Card</span>
+                            </div>
+                            <div class="payment-logos">
+                                <i class="fa-brands fa-cc-visa text-primary"></i>
+                                <i class="fa-brands fa-cc-mastercard text-danger"></i>
+                                <span class="fw-bold ms-1" style="font-size: 0.9rem; color: #005f9e;">RuPay</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option w-100">
+                            <div class="d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="paymentMethod">
+                                <span class="fw-semibold text-muted">Net Banking</span>
+                            </div>
+                            <div class="payment-logos">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                        </label>
+
+                        <label class="payment-option w-100">
+                            <div class="d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="paymentMethod">
+                                <span class="fw-semibold text-muted">Wallets</span>
+                            </div>
+                            <div class="payment-logos align-items-center">
+                                <span class="badge bg-primary rounded-pill fw-bold me-1"
+                                    style="font-size: 0.7rem;">Paytm</span>
+                                <span class="badge"
+                                    style="background: #5f259f; font-size: 0.7rem; border-radius: 20px;">PhonePe</span>
+                                <span class="badge bg-white text-dark border ms-1 fw-bold"
+                                    style="font-size: 0.7rem;"><span class="text-primary">G</span>Pay</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Coupon Code -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold mb-1">Coupon Code</label>
+                        <p class="text-muted small mb-2">Have a coupon code?</p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter coupon code">
+                            <button class="btn btn-outline-secondary px-4 fw-medium text-dark"
+                                type="button">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Terms & Submit -->
+                    <div class="mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="termsCheck" checked
+                                style="background-color: var(--brand-yellow); border-color: var(--brand-yellow);">
+                            <label class="form-check-label small text-muted" for="termsCheck">
+                                I agree to the <a href="#" class="text-warning-emphasis text-decoration-none">Terms &
+                                    Conditions</a>, <a href="#"
+                                    class="text-warning-emphasis text-decoration-none">Privacy Policy</a> and <a
+                                    href="#" class="text-warning-emphasis text-decoration-none">Cancellation Policy</a>.
+                            </label>
+                        </div>
+                    </div>
+
+                    <button
+                        class="btn btn-brand w-100 py-3 fs-5 mb-3 d-flex justify-content-center align-items-center gap-2">
+                        <i class="fa-solid fa-lock"></i> Confirm Booking
+                    </button>
+
+                    <div class="text-center text-muted small d-flex justify-content-center align-items-center gap-2">
+                        <i class="fa-solid fa-shield-check"></i> Safe & Secure Payments
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Features Banner -->
+    <section class="container mb-5">
+        <div class="row g-4 p-4 rounded-4" style="background-color: #fff;">
+            <div class="col-md-6 col-lg-3 d-flex gap-3">
+                <div class="feature-bottom-icon"><i class="fa-solid fa-tags"></i></div>
+                <div>
+                    <h6 class="fw-bold mb-1">No Hidden Charges</h6>
+                    <p class="text-muted small mb-0">Transparent pricing always</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex gap-3">
+                <div class="feature-bottom-icon"><i class="fa-solid fa-car-burst"></i></div>
+                <div>
+                    <h6 class="fw-bold mb-1">Well Maintained Cars</h6>
+                    <p class="text-muted small mb-0">Regular service & cleaning</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex gap-3">
+                <div class="feature-bottom-icon"><i class="fa-solid fa-headset"></i></div>
+                <div>
+                    <h6 class="fw-bold mb-1">24/7 Support</h6>
+                    <p class="text-muted small mb-0">We are here to help anytime</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex gap-3">
+                <div class="feature-bottom-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                    <h6 class="fw-bold mb-1">Free Cancellation</h6>
+                    <p class="text-muted small mb-0">Cancel up to 24 hours before pickup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <a class="navbar-brand mb-3 d-inline-flex" href="#">
+                        <i class="bi bi-car-front-fill"></i>
+                        <div class="ms-2 text-start">
+                            <span class="d-block lh-1 text-white fs-4">DRIVEX</span>
+                            <span class="d-block lh-1 fs-6 fw-normal text-white">RENTALS</span>
+                        </div>
+                    </a>
+                    <p class="mt-3">Your journey, your car, your way. Affordable self-drive car rentals across India.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Cars</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Booking</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Cars</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Hyundai Creta</a></li>
+                        <li><a href="#">Maruti Swift</a></li>
+                        <li><a href="#">Honda City</a></li>
+                        <li><a href="#">Maruti Baleno</a></li>
+                        <li><a href="#">Toyota Innova</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mt-3">
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-telephone text-white"></i> +91 98765
+                            43210</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-envelope text-white"></i>
+                            info@drivexindia.com</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-clock text-white"></i> Available
+                            24/7</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6>Download <span class="text-warning">DriveX</span> Now</h6>
+                    <div class="app-buttons">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv"
+                            alt="">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4 border-top border-secondary">
+                <small>&copy; 2026 DriveX Rentals. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Premium UPI Payment Gateway Modal -->
+    <div class="modal fade" id="qrPaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal border-0">
+                <!-- Loading/QR Screen -->
+                <div class="modal-body p-0 text-center" id="paymentView">
+                    <div class="bg-dark text-white p-4 rounded-top-4 text-start position-relative overflow-hidden">
+                        <div class="position-absolute top-0 end-0 opacity-25" style="transform: translate(20%, -30%);">
+                            <i class="fa-brands fa-cc-visa" style="font-size: 8rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-1">DriveX Secure Pay</h5>
+                        <p class="small text-white-50 mb-0">Total Amount Payable</p>
+                        <h2 class="fw-bold mt-2 mb-0">₹12,094.00</h2>
+                    </div>
+
+                    <div class="p-4 pt-5">
+                        <p class="text-muted small fw-semibold mb-3 text-uppercase tracking-wider">Scan QR with any UPI
+                            App</p>
+
+                        <!-- Fake QR Container -->
+                        <div class="qr-container mx-auto position-relative mb-4">
+                            <div class="qr-scanner-line"></div>
+                            <!-- Using a generic sample QR code image -->
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=FakePaymentForDriveX"
+                                alt="Payment QR" class="img-fluid rounded-3 border p-2 bg-white shadow-sm" width="180">
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill"><span
+                                    class="text-primary fw-bold">G</span>Pay</span>
+                            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill"
+                                style="color: #5f259f !important; font-weight: bold;">PhonePe</span>
+                            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill"
+                                style="color: #00baef !important; font-weight: bold;">Paytm</span>
+                        </div>
+
+                        <div
+                            class="bg-light rounded-3 p-3 mb-4 text-start d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="small text-muted mb-1">Session expires in</div>
+                                <div class="fw-bold text-danger fs-5" id="qrTimer">05:00</div>
+                            </div>
+                            <i class="fa-regular fa-clock fs-2 text-muted opacity-50"></i>
+                        </div>
+
+                        <button class="btn btn-outline-secondary w-100 fw-medium" data-bs-dismiss="modal">Cancel
+                            Payment</button>
+                    </div>
+                </div>
+
+                <!-- Success Screen (Hidden by default) -->
+                <div class="modal-body p-5 text-center d-none" id="successView">
+                    <div class="success-animation mb-4">
+                        <i class="fa-solid fa-circle-check text-success" style="font-size: 5rem;"></i>
+                    </div>
+                    <h4 class="fw-bold text-success mb-2">Payment Successful</h4>
+                    <p class="text-muted small mb-4">Your booking has been confirmed.</p>
+
+                    <div class="border rounded-3 p-3 text-start mb-4 bg-light">
+                        <div class="row g-2 small">
+                            <div class="col-5 text-muted">Amount Paid:</div>
+                            <div class="col-7 fw-bold text-end">₹12,094.00</div>
+
+                            <div class="col-5 text-muted">Transaction ID:</div>
+                            <div class="col-7 fw-bold text-end font-monospace text-primary" id="fakeTxnId">TXN123456789
+                            </div>
+
+                            <div class="col-5 text-muted">Date & Time:</div>
+                            <div class="col-7 fw-bold text-end" id="txnDate">13 Aug 2026, 11:45 AM</div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-brand w-100" data-bs-dismiss="modal">View Booking Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

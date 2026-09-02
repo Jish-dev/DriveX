@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveX Rentals</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <!-- <img src="img/logo-2.png" alt=""> -->
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active"
+                            style="border-bottom: 2px solid var(--brand-yellow);" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cars.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="book.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4">
+                    <i class="bi bi-moon-fill text-white fs-5" role="button"></i>
+                    <a class="text-dark" href="book.html"><button class="btn btn-brand">Book Now</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">EXPLORE INDIA.<br><span class="text-brand">DRIVE</span> YOUR WAY.</h1>
+                    <p class="hero-subtitle">Self-drive cars for every journey.<br>Affordable. Reliable. Everywhere.</p>
+                    <div class="hero-features">
+                        <span><i class="bi bi-shield-check"></i> Trusted & Safe</span>
+                        <span><i class="bi bi-currency-rupee"></i> Best Prices</span>
+                        <span><i class="bi bi-headset"></i> 24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Search Bar -->
+    <div class="container search-bar-container">
+        <div class="search-bar">
+            <form class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label>Pickup Location</label>
+                    <!-- Added position-relative so the dropdown aligns perfectly -->
+                    <div class="input-group position-relative">
+                        <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-geo-alt"></i></span>
+                        <input class="form-control border-start-0 ps-0" id="location" type="text"
+                            placeholder="Enter a location..." autocomplete="off" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <label>Pickup Date</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"></span>
+                        <input type="date" class="form-control border-start-0 ps-0" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label>Return Date</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"></span>
+                        <input type="date" class="form-control border-start-0 ps-0" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>Car Type</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"><i
+                                class="bi bi-car-front"></i></span>
+                        <select class="form-select border-start-0 ps-0">
+                            <option>All Types</option>
+                            <option>SUV</option>
+                            <option>Hatchback</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-brand w-100 h-100 py-2">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Featured Cars -->
+    <section class="container mt-5 pt-4">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <h2 class="section-title mb-0">Featured Cars</h2>
+            <a href="#" class="view-all">View All Cars <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+            <!-- Car 1 -->
+            <div class="col">
+                <div class="car-card">
+                    <div class="car-img-wrapper">
+                        <!-- Added loading="lazy" -->
+                        <img src="img/creta.avif" alt="Hyundai Creta" loading="lazy">
+                    </div>
+                    <div class="car-card-body">
+                        <div>
+                            <h5 class="mb-0 fw-bold">Hyundai Creta</h5>
+                            <small class="text-muted d-block mb-3">SUV</small>
+                            <div class="car-price mb-3">₹2,199 <span>/ day</span></div>
+                        </div>
+                        <button class="btn btn-outline-secondary w-100 mt-auto">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Car 2 -->
+            <div class="col">
+                <div class="car-card">
+                    <div class="car-img-wrapper">
+                        <img src="img/swift.png" alt="Maruti Swift" loading="lazy">
+                    </div>
+                    <div class="car-card-body">
+                        <div>
+                            <h5 class="mb-0 fw-bold">Maruti Swift</h5>
+                            <small class="text-muted d-block mb-3">Hatchback</small>
+                            <div class="car-price mb-3">₹1,499 <span>/ day</span></div>
+                        </div>
+                        <button class="btn btn-outline-secondary w-100 mt-auto">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Car 3 -->
+            <div class="col">
+                <div class="car-card">
+                    <div class="car-img-wrapper">
+                        <img src="img/city.avif" alt="Honda City" loading="lazy">
+                    </div>
+                    <div class="car-card-body">
+                        <div>
+                            <h5 class="mb-0 fw-bold">Honda City</h5>
+                            <small class="text-muted d-block mb-3">Sedan</small>
+                            <div class="car-price mb-3">₹1,999 <span>/ day</span></div>
+                        </div>
+                        <button class="btn btn-outline-secondary w-100 mt-auto">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Car 4 -->
+            <div class="col">
+                <div class="car-card">
+                    <div class="car-img-wrapper">
+                        <img src="img/Maruti-Dzire.png" alt="Kia Seltos" loading="lazy">
+                    </div>
+                    <div class="car-card-body">
+                        <div>
+                            <h5 class="mb-0 fw-bold">Maruti Desire</h5>
+                            <small class="text-muted d-block mb-3">Sedan</small>
+                            <div class="car-price mb-3">₹1,699 <span>/ day</span></div>
+                        </div>
+                        <button class="btn btn-outline-secondary w-100 mt-auto">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Car 5 -->
+            <div class="col">
+                <div class="car-card">
+                    <div class="car-img-wrapper">
+                        <img src="img/innova.png" alt="Toyota Innova" loading="lazy">
+                    </div>
+                    <div class="car-card-body">
+                        <div>
+                            <h5 class="mb-0 fw-bold">Toyota Innova</h5>
+                            <small class="text-muted d-block mb-3">MPV</small>
+                            <div class="car-price mb-3">₹2,799 <span>/ day</span></div>
+                        </div>
+                        <button class="btn btn-outline-secondary w-100 mt-auto">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Strip -->
+    <section class="container mt-5 pt-3">
+        <div class="benefits-strip">
+            <div class="row text-center text-md-start gy-4">
+                <div class="col-md-3 d-flex align-items-center gap-3">
+                    <i class="bi bi-tags benefit-icon"></i>
+                    <div>
+                        <h6 class="fw-bold mb-1">Best Price</h6>
+                        <small class="text-light opacity-75">Competitive rates guaranteed</small>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-center gap-3">
+                    <i class="bi bi-car-front benefit-icon"></i>
+                    <div>
+                        <h6 class="fw-bold mb-1">Wide Selection</h6>
+                        <small class="text-light opacity-75">100+ cars to suit every need</small>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-center gap-3">
+                    <i class="bi bi-calendar-check benefit-icon"></i>
+                    <div>
+                        <h6 class="fw-bold mb-1">Easy Booking</h6>
+                        <small class="text-light opacity-75">Quick & hassle-free online booking</small>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-center gap-3">
+                    <i class="bi bi-headset benefit-icon"></i>
+                    <div>
+                        <h6 class="fw-bold mb-1">24/7 Support</h6>
+                        <small class="text-light opacity-75">We are here to help anytime</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial & Promo -->
+    <section class="container mt-5 pt-3">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="testimonial-card text-center position-relative">
+                    <h3 class="section-title text-start">What Our Customers Say</h3>
+                    <div id="mycarousel" class="carousel slide">
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="my-4">
+                                    <i class="bi bi-quote fs-1 text-brand"
+                                        style="top: 80px; left: 40px; opacity: 0.5;"></i>
+                                    <p class="fs-5 fst-italic mb-4">"Excellent service and well-maintained
+                                        cars.<br>Made our trip to
+                                        Manali unforgettable!"</p>
+                                    <h6 class="fw-bold">- Dev (Kerala)</h6>
+                                    <div class="stars mt-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="my-4">
+                                    <i class="bi bi-quote fs-1 text-brand"
+                                        style="top: 80px; left: 40px; opacity: 0.5;"></i>
+                                    <p class="fs-5 fst-italic mb-4">"Excellent service and well-maintained
+                                        cars.<br>Made our trip to
+                                        Manali unforgettable!"</p>
+                                    <h6 class="fw-bold">- Dev (Kerala)</h6>
+                                    <div class="stars mt-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="my-4">
+                                    <i class="bi bi-quote fs-1 text-brand"
+                                        style="top: 80px; left: 40px; opacity: 0.5;"></i>
+                                    <p class="fs-5 fst-italic mb-4">"Excellent service and well-maintained
+                                        cars.<br>Made our trip to
+                                        Manali unforgettable!"</p>
+                                    <h6 class="fw-bold">- Dev (Kerala)</h6>
+                                    <div class="stars mt-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-next" data-bs-target="#mycarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+
+                        <button class="carousel-control-prev" data-bs-target="#mycarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="promo-card d-flex flex-column justify-content-center">
+                    <h2 class="fw-bold mb-2">Get <span class="text-brand">10% OFF</span></h2>
+                    <h4 class="mb-4">On Your First Booking</h4>
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <span>Use code:</span>
+                        <span class="bg-brand text-dark fw-bold px-3 py-1 rounded">DRIVE10</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-brand">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations -->
+    <!-- <section class="container mt-5 pt-4">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <h2 class="section-title mb-0">Top Destinations</h2>
+            <a href="#" class="view-all">Explore More <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+            <div class="col">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&fm=webp&q=60" alt="Goa"
+                        loading="lazy">
+                    <div class="destination-overlay text-center">Goa</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1626014903706-e7c629fb3e8d?w=400&fm=webp&q=60"
+                        alt="Manali" loading="lazy">
+                    <div class="destination-overlay text-center">Manali</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&fm=webp&q=60"
+                        alt="Kerala" loading="lazy">
+                    <div class="destination-overlay text-center">Kerala</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&fm=webp&q=60"
+                        alt="Rajasthan" loading="lazy">
+                    <div class="destination-overlay text-center">Rajasthan</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1626014903706-e7c629fb3e8d?w=400&fm=webp&q=60"
+                        alt="Himachal Pradesh" loading="lazy">
+                    <div class="destination-overlay text-center">Himachal Pradesh</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Why Rent With Us -->
+    <section class="container mt-5 pt-4">
+        <h2 class="section-title">Why Rent With DriveX?</h2>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 mt-2">
+            <div class="col text-center text-md-start">
+                <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                    <div class="rent-icon"><i class="bi bi-wallet2"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">No Hidden Charges</h6>
+                        <p class="text-muted small mb-0">Transparent pricing always</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center text-md-start">
+                <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                    <div class="rent-icon"><i class="bi bi-car-front"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Well Maintained Cars</h6>
+                        <p class="text-muted small mb-0">Regular service & cleaning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center text-md-start">
+                <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                    <div class="rent-icon"><i class="bi bi-clock-history"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Flexible Rentals</h6>
+                        <p class="text-muted small mb-0">Hourly, daily, weekly & monthly</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center text-md-start">
+                <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                    <div class="rent-icon"><i class="bi bi-x-circle"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Easy Cancellation</h6>
+                        <p class="text-muted small mb-0">Free cancellation up to 24 hours</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center text-md-start">
+                <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                    <div class="rent-icon"><i class="bi bi-geo-alt"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Pan India Network</h6>
+                        <p class="text-muted small mb-0">Available in 500+ cities across India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5 pt-4 mb-5 pb-4">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="row mt-4 g-4">
+            <div class="col-md-6">
+                <div class="accordion" id="faqLeft">
+                    <div class="accordion-item border-0 border-bottom mb-2 pb-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent fw-bold px-2 shadow-none"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What documents are required to book a car?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+                            <div class="accordion-body text-muted px-0">
+                                You need a valid Driving License, Aadhar Card, and a Credit/Debit card for the security
+                                deposit.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 border-bottom mb-2 pb-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent fw-bold px-2 shadow-none"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Is fuel included in the rental price?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+                            <div class="accordion-body text-muted px-0">
+                                No, fuel is not included. You receive the car with a full tank and must return it full.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 border-bottom mb-2 pb-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent fw-bold px-2 shadow-none"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Can I cancel or modify my booking?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+                            <div class="accordion-body text-muted px-0">
+                                Yes, modifications and cancellations are free up to 24 hours prior to your pickup time.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="accordion" id="faqRight">
+                    <div class="accordion-item border-0 border-bottom mb-2 pb-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent fw-bold px-2 shadow-none"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                What is your minimum age requirement?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+                            <div class="accordion-body text-muted px-0">
+                                The minimum age to rent a vehicle is 21 years old.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 border-bottom mb-2 pb-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent fw-bold px-2 shadow-none"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                Do you provide cars with driver?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+                            <div class="accordion-body text-muted px-0">
+                                No, we specialize exclusively in self-drive car rentals.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 border-bottom mb-2 pb-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent fw-bold px-2 shadow-none"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                Is there a security deposit?
+                            </button>
+                        </h2>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+                            <div class="accordion-body text-muted px-0">
+                                Yes, a refundable security deposit is required and is blocked on your card at pickup.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <a class="navbar-brand mb-3 d-inline-flex" href="#">
+                        <i class="bi bi-car-front-fill"></i>
+                        <div class="ms-2 text-start">
+                            <span class="d-block lh-1 text-white fs-4">DRIVEX</span>
+                            <span class="d-block lh-1 fs-6 fw-normal text-white">RENTALS</span>
+                        </div>
+                    </a>
+                    <p class="mt-3">Your journey, your car, your way. Affordable self-drive car rentals across India.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Cars</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Booking</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Cars</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Hyundai Creta</a></li>
+                        <li><a href="#">Maruti Swift</a></li>
+                        <li><a href="#">Honda City</a></li>
+                        <li><a href="#">Maruti Baleno</a></li>
+                        <li><a href="#">Toyota Innova</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mt-3">
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-telephone text-white"></i> +91 98765
+                            43210</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-envelope text-white"></i>
+                            info@drivexindia.com</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-clock text-white"></i> Available
+                            24/7</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6>Download <span class="text-warning">DriveX</span> Now</h6>
+                    <div class="app-buttons">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv"
+                            alt="">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4 border-top border-secondary">
+                <small>&copy; 2026 DriveX Rentals. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://googleapis.com"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

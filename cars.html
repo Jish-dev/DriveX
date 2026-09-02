@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveX | Cars</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <!-- <img src="img/logo-2.png" alt=""> -->
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active"
+                            style="border-bottom: 2px solid var(--brand-yellow);" href="cars.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="book.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4">
+                    <i class="bi bi-moon-fill text-white fs-5" role="button"></i>
+                    <a class="text-dark" href="book.html"><button class="btn btn-brand">Book Now</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">OUR CARS</h1>
+                    <p class="hero-subtitle">Choose from a wide range of self-drive cars <br> and start your journey
+                        across india</p>
+                    <div class="hero-features">
+                        <span><i class="bi bi-house"></i>Home</span>
+                        <span><i class="bi bi-arrow-right"></i>Cars</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container search-bar-container">
+        <div class="search-bar">
+            <div class="prom-card d-flex flex-column justify-content-center">
+                    <h3 class="fw-bold mb-2">Get <span class="text-brand">10% OFF</span> On Your First Booking</h3>
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <span>Use code:</span>
+                        <span class="bg-brand text-dark fw-bold px-3 py-1 rounded">DRIVE10</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-brand">Book Now</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Category Nav -->
+    <div class="categories d-flex justify-content-between px-5 py-3 bg-white border-bottom my-4 overflow-auto gap-4">
+        <div
+            class="category-item active d-flex flex-column align-items-center text-dark border-bottom border-warning border-3 pb-2 cursor-pointer">
+            <i class="fa-solid fa-table-cells-large text-warning fs-4"></i>
+            <span class="small fw-semibold mt-1">All Cars</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-solid fa-car-rear fs-4"></i>
+            <span class="small mt-1">Hatchback</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-solid fa-car fs-4"></i>
+            <span class="small mt-1">Sedan</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-solid fa-truck-monster fs-4"></i>
+            <span class="small mt-1">SUV</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-solid fa-bolt fs-4"></i>
+            <span class="small mt-1">Electric</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-regular fa-gem fs-4"></i>
+            <span class="small mt-1">Premium</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-solid fa-crown fs-4"></i>
+            <span class="small mt-1">Luxury</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-solid fa-van-shuttle fs-4"></i>
+            <span class="small mt-1">Van</span>
+        </div>
+        <div class="category-item d-flex flex-column align-items-center text-muted cursor-pointer">
+            <i class="fa-solid fa-truck-pickup fs-4"></i>
+            <span class="small mt-1">MUV</span>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="container-fluid px-5 mb-5">
+        <div class="row">
+
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3 mb-4">
+                <div class="sidebar bg-white p-4 rounded-3 border">
+                    <div
+                        class="filter-header d-flex justify-content-between align-items-center pb-3 mb-3 border-bottom">
+                        <h5 class="fw-bold mb-0">Filters</h5>
+                        <span class="clear-all text-warning small cursor-pointer">Clear All</span>
+                    </div>
+
+                    <div class="filter-section pb-3 mb-3 border-bottom">
+                        <div class="filter-title fw-semibold mb-3">Price Range</div>
+                        <input type="range" class="form-range" min="999" max="5000" value="999">
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>₹999</span>
+                            <span>₹5,000+</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-section pb-3 mb-3 border-bottom">
+                        <div class="filter-title fw-semibold mb-3 d-flex justify-content-between align-items-center">
+                            Car Type <i class="fa-solid fa-chevron-up small"></i>
+                        </div>
+                        <div class="d-flex flex-column gap-2 text-muted small">
+                            <label><input type="checkbox" class="form-check-input me-2" checked> All Types</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Hatchback</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Sedan</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> SUV</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> MUV</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Van</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Premium</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Luxury</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Electric</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section pb-3 mb-3 border-bottom">
+                        <div class="filter-title fw-semibold mb-3 d-flex justify-content-between align-items-center">
+                            Fuel Type <i class="fa-solid fa-chevron-up small"></i>
+                        </div>
+                        <div class="d-flex flex-column gap-2 text-muted small">
+                            <label><input type="checkbox" class="form-check-input me-2"> Petrol</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Diesel</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> CNG</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Electric</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section pb-3 mb-3 border-bottom">
+                        <div class="filter-title fw-semibold mb-3 d-flex justify-content-between align-items-center">
+                            Transmission <i class="fa-solid fa-chevron-up small"></i>
+                        </div>
+                        <div class="d-flex flex-column gap-2 text-muted small">
+                            <label><input type="checkbox" class="form-check-input me-2"> Manual</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> Automatic</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section pb-3 mb-3">
+                        <div class="filter-title fw-semibold mb-3 d-flex justify-content-between align-items-center">
+                            Seating Capacity <i class="fa-solid fa-chevron-up small"></i>
+                        </div>
+                        <div class="d-flex flex-column gap-2 text-muted small">
+                            <label><input type="checkbox" class="form-check-input me-2"> 4 Seater</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> 5 Seater</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> 6 Seater</label>
+                            <label><input type="checkbox" class="form-check-input me-2"> 7+ Seater</label>
+                        </div>
+                    </div>
+
+                    <button
+                        class="btn btn-outline-secondary w-100 fw-semibold mt-2 py-2 d-flex align-items-center justify-content-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i> Reset Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <p class="text-muted mb-0">Showing 1 - 12 of 60 cars</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <select class="form-select form-select-sm py-2 px-5">
+                            <option>Popularity </option>
+                            <option>Seating </option>
+                            <option>Brand</option>
+                        </select>
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-dark btn-sm px-3"><i
+                                    class="fa-solid fa-table-cells-large"></i></button>
+                            <button class="btn btn-outline-secondary btn-sm px-3"><i
+                                    class="fa-solid fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Grid -->
+                <div class="row row-cols-1 row-cols-md-4 g-3 mb-4">
+
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="card  border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <div class="car-img-wrapper">
+                                    <img src="img/creta.avif" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Hyundai Creta</h5>
+                                <p class="text-muted small mb-3">SUV</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Diesel</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹2,399 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <div class="car-img-wrapper">
+                                    <img src="img/swift.png" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Maruti Swift</h5>
+                                <p class="text-muted small mb-3">Hatchback</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹1,499 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card  border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-3">New</span>
+                                <div class="car-img-wrapper">
+                                    <img src="img/city.avif" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Honda City</h5>
+                                <p class="text-muted small mb-3">Sedan</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹1,999 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col">
+                        <div class="card border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-3">Popular</span>
+                                <div class="car-img-wrapper">
+                                    <img src="img/Maruti-Dzire.png" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Maruti Desire</h5>
+                                <p class="text-muted small mb-3">Sedan</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹1,699 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="col">
+                        <div class="card border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <div class="car-img-wrapper">
+                                    <img src="img/innova.png" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Toyota Innova</h5>
+                                <p class="text-muted small mb-3">MUV</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 7 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Diesel</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹2,799 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="col">
+                        <div class="card  border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-3"><i
+                                        class="fa-solid fa-bolt"></i> Electric</span>
+                                <div class="car-img-wrapper">
+                                    <img src="img/nexon-dark-edition-new.webp" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Tata Nexon EV</h5>
+                                <p class="text-muted small mb-3">Electric SUV</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Electric</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹2,199 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card  border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-3">Premium</span>
+                                <div class="car-img-wrapper">
+                                    <img src="img/c-class.png" alt="c-class" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Mercedes C class</h5>
+                                <p class="text-muted small mb-3">Sedan</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0 ">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Diesel</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹5,499 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-3">CNG</span>
+                                <div class="car-img-wrapper">
+                                    <img src="img/ertiga.png" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Maruti Ertiga</h5>
+                                <p class="text-muted small mb-3">MUV</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 7 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> CNG</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹2,699 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card  border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <div class="car-img-wrapper">
+                                    <img src="img/creta.avif" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Hyundai Creta</h5>
+                                <p class="text-muted small mb-3">SUV</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Diesel</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹2,399 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <div class="car-img-wrapper">
+                                    <img src="img/swift.png" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Maruti Swift</h5>
+                                <p class="text-muted small mb-3">Hatchback</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹1,499 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card  border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-3">New</span>
+                                <div class="car-img-wrapper">
+                                    <img src="img/city.avif" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Honda City</h5>
+                                <p class="text-muted small mb-3">Sedan</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹1,999 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col">
+                        <div class="card border shadow-sm">
+                            <div class="card-image-placeholder bg-light position-relative d-flex align-items-center justify-content-center text-muted"
+                                style="height: 150px;">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-3">Popular</span>
+                                <div class="car-img-wrapper">
+                                    <img src="img/Maruti-Dzire.png" alt="Maruti Swift" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold">Maruti Desire</h5>
+                                <p class="text-muted small mb-3">Sedan</p>
+                                <div class="d-flex gap-3 text-muted small pb-3 mb-0">
+                                    <span><i class="fa-regular fa-user"></i> 5 Seats</span>
+                                    <span><i class="fa-solid fa-gear"></i> Manual</span>
+                                    <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="fs-5 fw-bold">₹1,699 <span class="text-muted small fw-normal">/
+                                            day</span></div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-warning text-dark flex-grow-1 fw-semibold">View
+                                        Details</button>
+                                    <button class="btn btn-outline-secondary px-3"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+
+                <!-- Pagination -->
+                <nav class="d-flex justify-content-center">
+                    <ul class="pagination gap-1">
+                        <li class="page-item"><a class="page-link text-dark border rounded-2" href="#"><i
+                                    class="fa-solid fa-chevron-left"></i></a></li>
+                        <li class="page-item"><a
+                                class="page-link bg-warning text-dark border-warning fw-semibold rounded-2"
+                                href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-dark border rounded-2" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link text-dark border rounded-2" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link text-dark border rounded-2" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link text-dark border rounded-2" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link text-dark border rounded-2" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link text-dark border rounded-2" href="#">Next <i
+                                    class="fa-solid fa-chevron-right"></i></a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+     <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <a class="navbar-brand mb-3 d-inline-flex" href="#">
+                        <i class="bi bi-car-front-fill"></i>
+                        <div class="ms-2 text-start">
+                            <span class="d-block lh-1 text-white fs-4">DRIVEX</span>
+                            <span class="d-block lh-1 fs-6 fw-normal text-white">RENTALS</span>
+                        </div>
+                    </a>
+                    <p class="mt-3">Your journey, your car, your way. Affordable self-drive car rentals across India.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Cars</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Booking</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Cars</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Hyundai Creta</a></li>
+                        <li><a href="#">Maruti Swift</a></li>
+                        <li><a href="#">Honda City</a></li>
+                        <li><a href="#">Maruti Baleno</a></li>
+                        <li><a href="#">Toyota Innova</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mt-3">
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-telephone text-white"></i> +91 98765
+                            43210</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-envelope text-white"></i>
+                            info@drivexindia.com</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-clock text-white"></i> Available
+                            24/7</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6>Download <span class="text-warning">DriveX</span> Now</h6>
+                    <div class="app-buttons">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv"
+                            alt="">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4 border-top border-secondary">
+                <small>&copy; 2026 DriveX Rentals. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

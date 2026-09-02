@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveX | Contact</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <!-- <img src="img/logo-2.png" alt=""> -->
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cars.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="book.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link active"
+                            style="border-bottom: 2px solid var(--brand-yellow);" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4">
+                    <i class="bi bi-moon-fill text-white fs-5" role="button"></i>
+                    <a class="text-dark" href="book.html"><button class="btn btn-brand">Book Now</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">EXPLORE INDIA.<br><span class="text-brand">DRIVE</span> YOUR WAY.</h1>
+                    <p class="hero-subtitle">Self-drive cars for every journey.<br>Affordable. Reliable. Everywhere.</p>
+                    <div class="hero-features">
+                        <span><i class="bi bi-shield-check"></i> Trusted & Safe</span>
+                        <span><i class="bi bi-currency-rupee"></i> Best Prices</span>
+                        <span><i class="bi bi-headset"></i> 24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <section class="container my-5 py-4">
+        <div class="row g-5">
+            <!-- Left Column: Form -->
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-2">Get In Touch</h3>
+                <p class="text-muted mb-4 pe-lg-5">Fill out the form and our team will get back to you within a few hours.</p>
+                
+                <form id="contactForm">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0"><i class="fa-regular fa-user text-muted"></i></span>
+                                <input type="text" class="form-control border-start-0 ps-0 form-control-lg" placeholder="Full Name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0"><i class="fa-regular fa-envelope text-muted"></i></span>
+                                <input type="email" class="form-control border-start-0 ps-0 form-control-lg" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-phone text-muted"></i></span>
+                            <input type="tel" class="form-control border-start-0 ps-0 form-control-lg" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="fa-regular fa-file-lines text-muted"></i></span>
+                            <input type="text" class="form-control border-start-0 ps-0 form-control-lg" placeholder="Subject" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 align-items-start pt-3"><i class="fa-solid fa-pen text-muted"></i></span>
+                            <textarea class="form-control border-start-0 ps-0" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-brand w-100 py-3 fw-bold d-flex justify-content-center align-items-center gap-2 fs-6">
+                        <i class="fa-regular fa-paper-plane"></i> Send Message
+                    </button>
+                    
+                    <div class="text-center mt-3 text-muted small d-flex align-items-center justify-content-center gap-2">
+                        <i class="fa-solid fa-shield-halved"></i> We respect your privacy. Your information is safe with us.
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Column: Info Cards -->
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-2">Contact Information</h3>
+                <p class="text-muted mb-4">Reach out to us through any of these channels.</p>
+                
+                <div class="d-flex flex-column gap-3">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Phone Number</h6>
+                            <div class="fw-bold fs-5 text-dark">+91 98765 43210</div>
+                            <small class="text-muted">Available 24/7</small>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Email Address</h6>
+                            <div class="fw-bold text-dark">info@driveindia.com</div>
+                            <small class="text-muted">We reply within a few hours</small>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Office Address</h6>
+                            <div class="text-dark">Drive India Rentals Pvt. Ltd.</div>
+                            <div class="text-muted small">2nd Floor, Tech Park Building,<br>Calicut, Kerala - 673001, India</div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Working Hours</h6>
+                            <div class="text-dark fw-medium">Monday - Sunday</div>
+                            <small class="text-muted">6:00 AM - 11:00 PM</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="container mb-5">
+        <div class="map-wrapper d-flex flex-column flex-md-row bg-light rounded-4 overflow-hidden border">
+            <div class="map-text p-4 p-md-5 bg-white d-flex flex-column justify-content-center" style="flex: 1; max-width: 400px;">
+                <h4 class="fw-bold mb-3">Our Location</h4>
+                <p class="text-muted small mb-4">Visit our office or find us on the map.</p>
+                
+                <div class="d-flex gap-3 mb-4">
+                    <i class="fa-solid fa-location-dot text-brand-yellow fs-4 mt-1"></i>
+                    <div>
+                        <h6 class="fw-bold mb-1">Drive India Rentals Pvt. Ltd.</h6>
+                        <small class="text-muted">2nd Floor, Tech Park Building,<br>Calicut, Kerala - 673001, India</small>
+                    </div>
+                </div>
+                
+                <button class="btn btn-outline-brand fw-semibold w-fit-content d-inline-flex align-items-center gap-2">
+                    Get Directions <i class="fa-solid fa-location-arrow"></i>
+                </button>
+            </div>
+            <div class="map-container" style="flex: 2;">
+                <!-- Placeholder for iframe map -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.42398413155!2d75.7533036665795!3d11.255850989397682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x32150641ca32ecab!2sKozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; min-height: 350px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container mb-5 pb-4">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <h3 class="fw-bold mb-0">Frequently Asked Questions</h3>
+            <a href="#" class="text-brand-yellow text-decoration-none fw-semibold">View All FAQs <i class="fa-solid fa-angle-right ms-1"></i></a>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="faq-card p-4 border rounded-3 bg-white h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex gap-3">
+                            <i class="fa-regular fa-circle-question text-brand-yellow fs-5 mt-1"></i>
+                            <h6 class="fw-bold mb-0">What documents are required to rent a car?</h6>
+                        </div>
+                        <i class="fa-solid fa-angle-down text-muted ms-2"></i>
+                    </div>
+                    <p class="text-muted small mb-0 ms-4 ps-2">You need a valid driving license, an ID proof (Aadhaar/PAN/Passport) and a credit/debit card for the security deposit.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="faq-card p-4 border rounded-3 bg-white h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex gap-3">
+                            <i class="fa-regular fa-circle-question text-brand-yellow fs-5 mt-1"></i>
+                            <h6 class="fw-bold mb-0">Is there a kilometer limit for rentals?</h6>
+                        </div>
+                        <i class="fa-solid fa-angle-down text-muted ms-2"></i>
+                    </div>
+                    <p class="text-muted small mb-0 ms-4 ps-2">Most of our cars come with unlimited kilometers. Check the car details or contact us for specific information.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="faq-card p-4 border rounded-3 bg-white h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex gap-3">
+                            <i class="fa-regular fa-circle-question text-brand-yellow fs-5 mt-1"></i>
+                            <h6 class="fw-bold mb-0">Can I modify or cancel my booking?</h6>
+                        </div>
+                        <i class="fa-solid fa-angle-down text-muted ms-2"></i>
+                    </div>
+                    <p class="text-muted small mb-0 ms-4 ps-2">Yes, you can modify or cancel your booking up to 24 hours before the scheduled pickup for a full refund.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="faq-card p-4 border rounded-3 bg-white h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex gap-3">
+                            <i class="fa-regular fa-circle-question text-brand-yellow fs-5 mt-1"></i>
+                            <h6 class="fw-bold mb-0">Do you provide delivery and pickup?</h6>
+                        </div>
+                        <i class="fa-solid fa-angle-down text-muted ms-2"></i>
+                    </div>
+                    <p class="text-muted small mb-0 ms-4 ps-2">Yes, we offer free delivery and pickup within city limits. Additional charges may apply for outstation locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <a class="navbar-brand mb-3 d-inline-flex" href="#">
+                        <i class="bi bi-car-front-fill"></i>
+                        <div class="ms-2 text-start">
+                            <span class="d-block lh-1 text-white fs-4">DRIVEX</span>
+                            <span class="d-block lh-1 fs-6 fw-normal text-white">RENTALS</span>
+                        </div>
+                    </a>
+                    <p class="mt-3">Your journey, your car, your way. Affordable self-drive car rentals across India.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Cars</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Booking</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Cars</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">Hyundai Creta</a></li>
+                        <li><a href="#">Maruti Swift</a></li>
+                        <li><a href="#">Honda City</a></li>
+                        <li><a href="#">Maruti Baleno</a></li>
+                        <li><a href="#">Toyota Innova</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mt-3">
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-telephone text-white"></i> +91 98765
+                            43210</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-envelope text-white"></i>
+                            info@drivexindia.com</li>
+                        <li class="d-flex align-items-center gap-2"><i class="bi bi-clock text-white"></i> Available
+                            24/7</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6>Download <span class="text-warning">DriveX</span> Now</h6>
+                    <div class="app-buttons">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv"
+                            alt="">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4 border-top border-secondary">
+                <small>&copy; 2026 DriveX Rentals. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
